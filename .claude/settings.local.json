@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn clean compile:*)",
+      "mcp__filesystem__list_directory",
+      "Bash(npx -y @modelcontextprotocol/server-database --host test-mysql.hxq.cn --port 3306 --database hxq_eap --user hxq_java --password ELB8HiRrFEdcAxKg 2>&1 | head -20)",
+      "Bash(mysql -h test-mysql.hxq.cn -P 3306 -u hxq_java -pELB8HiRrFEdcAxKg hxq_eap -e \"SELECT VERSION\\(\\);\" 2>&1)",
+      "Bash(apt-get update:*)",
+      "mcp__github__search_repositories",
+      "Bash(echo '{\"tool_name\":\"Edit\",\"tool_input\":{\"file_path\":\"D:\\\\\\\\project\\\\\\\\hxq-eap\\\\\\\\production\\\\\\\\config.json\"}}')",
+      "Bash(python .claude/hooks/pre-protect-production.py)",
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(claude plugin *)",
+      "Bash(node *)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "filesystem"
+  ]
+}
